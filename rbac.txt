@@ -1,0 +1,57 @@
+Slide 1: Title Slide
+KUBERNETES LAB – 3 HANDS ON
+Network Policies and RBAC Implementation
+
+Slide 2: Network Policies - App1 and App2
+1. Network Policy: App1 to App2
+
+Objective:
+Allow traffic from pod app1 to pod app2.
+
+Steps:
+
+Create pod app1 (app1.yml).
+Create pod app2 (app2.yml).
+Define and apply Network Policy (app-network-policy.yml).
+Test communication with curl.
+Slide 3: Network Policies - Frontend and Backend
+2. Network Policy: Frontend to Backend
+
+Objective:
+Allow traffic from Pods labeled role=frontend to role=backend, deny all else.
+
+Steps:
+
+Create frontend.yml and backend.yml.
+Define and apply Network Policy (frontend-to-backend-policy.yml).
+Test allowed and denied communication.
+Explanation:
+
+Policy applies to backend Pods.
+Traffic allowed only from frontend Pods.
+Slide 4: Troubleshooting Pod Communication
+3. Troubleshooting Pod Communication
+
+Check Pod status: kubectl get pods.
+Inspect logs: kubectl logs <pod-name>.
+Verify Network Policies: kubectl get networkpolicies.
+Test DNS and connectivity (nslookup, ping, curl).
+Inspect CNI and node network.
+Check resource limits and PodSecurityPolicy.
+Restart or recreate Pods if needed.
+Slide 5: Implementing RBAC in Kubernetes
+4. Implementing RBAC in Kubernetes
+
+Objective:
+Create a read-only Role and bind it to user jane_doe.
+
+Steps:
+
+Define Role (read-only-role.yml).
+Create RoleBinding (role-binding.yml).
+Verify access using kubectl auth can-i list pods.
+
+
+
+
+
