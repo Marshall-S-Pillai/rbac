@@ -1,3 +1,185 @@
+1. package week2_assignments;
+
+import java.util.Scanner;
+
+public class Arrayarithmetic {
+public static void main(String[] args) {
+int[][] array = {
+{3, 5, 6, 10},
+{12, 15, 18, 20},
+{21, 25, 30, 35}
+};
+
+int sum = 0;
+int count = 0;
+
+for (int i = 0; i < array.length; i++) {
+for (int j = 0; j < array[i].length; j++) {
+int num = array[i][j];
+if (num % 3 == 0) {
+sum+=num;
+}
+if (num % 5 == 0) {
+count++;
+}
+}
+}
+System.out.println("Sum = " + sum);
+System.out.println("Count = " + count);
+}
+}
+
+2. package week2_assignments;
+
+import java.util.Scanner;
+
+public class checkcharacter {
+public static void main(String[] args) {
+Scanner sc = new Scanner(System.in);
+String s = sc.nextLine();
+char ch = sc.next().charAt(0);
+int count = 0;
+for(int i=0;i<s.length();i++) {
+char c = s.charAt(i);
+if(c==ch) count++;
+}
+if(count > 0) System.out.println("The number of times the character o appears in the string is "+count);
+else System.out.println("The character "+ch+" doesn't appear in the string");
+}
+}
+
+3. package week2_assignments;
+
+import java.util.Scanner;
+
+public class addevenposition {
+
+public static void main(String[] args) {
+Scanner sc = new Scanner(System.in);
+System.out.print("Enter number : ");
+int n = sc.nextInt();
+int temp = n;
+int num1 = n;
+int count = 0;
+while (n > 0) {
+n /= 10;
+count++;
+}
+int post=count;
+int sum = 0;
+while(num1>0) {
+int y=num1%10;
+num1/=10;
+if(post%2==0) {
+sum += y;
+}
+post--;
+}
+System.out.print(sum);
+}
+}
+
+4. 
+package week2_assignments;
+
+import java.util.Scanner;
+
+public class calculator {
+
+public static void main(String[] args) {
+Scanner sc = new Scanner(System.in);
+boolean exit = false;
+while (!exit) {
+System.out.print("Enter first number: ");
+int n1 = sc.nextInt();
+System.out.print("Enter second number: ");
+int n2 = sc.nextInt();
+System.out.println("1. Addition");
+System.out.println("2. Subtraction");
+System.out.println("3. Multiplication");
+System.out.println("4. Division");
+System.out.println("5. Exit");
+System.out.print("Enter your choice: ");
+int choice = sc.nextInt();
+switch (choice) {
+case 1:
+System.out.println("Result: " + (n1 + n2));
+break;
+case 2:
+System.out.println("Result: " + (n1 - n2));
+break;
+case 3:
+System.out.println("Result: " + (n1 * n2));
+break;
+case 4:
+if (n2 != 0) {
+System.out.println("Result: " + (n1 / n2));
+} else {
+System.out.println("Error: Division by zero");
+}
+break;
+case 5:
+System.out.println("Exiting...");
+exit = true;
+break;
+default:
+System.out.println("Invalid choice. Try again.");
+}
+System.out.println();
+}
+}
+}
+
+5. 
+package week2_assignments;
+
+public class employee {
+String empName;
+int empId;
+double salary;
+String location;
+
+public employee(String empName, int empId, double salary, String location) {
+this.empName = empName;
+this.empId = empId;
+this.salary = salary;
+this.location = location;
+}
+}
+package week2_assignments;
+
+public class company {
+public static void main(String[] args) {
+employee[] employees = new employee[6];
+employees[0] = new employee("Satish", 101, 55000, "Bengaluru");
+employees[1] = new employee("Ravi", 102, 48000, "Chennai");
+employees[2] = new employee("Priya", 103, 60000, "Bengaluru");
+employees[3] = new employee("Anita", 104, 47000, "Chennai");
+employees[4] = new employee("Kiran", 105, 53000, "Hyderabad");
+employees[5] = new employee("Deepa", 106, 51000, "Bengaluru");
+double maxSalary = 0;
+String topEmpName = "";
+int topEmpId = 0;
+for (employee emp : employees) {
+if (emp.location=="Bengaluru" && emp.salary > maxSalary) {
+maxSalary = emp.salary;
+topEmpName = emp.empName;
+topEmpId = emp.empId;
+}
+}
+System.out.println(topEmpName + " has highest salary of Rs. " + (int)maxSalary + " in Bengaluru");
+int chennaiCount = 0;
+for (employee emp : employees) {
+if (emp.location=="Chennai") {
+chennaiCount++;
+}
+}
+System.out.println("There are " + chennaiCount + " employees working in Chennai.");
+}
+}
+
+
+
 Slide 1: Title Slide
 KUBERNETES LAB – 3 HANDS ON
 Network Policies and RBAC Implementation
